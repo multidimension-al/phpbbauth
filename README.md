@@ -30,13 +30,13 @@ $wgGroupPermissions['*']['autocreateaccount'] = true;
 Activate the extension in ```LocalSettings.php```.
 
 ```php
-wfLoadExtension( 'phpBBAuth'); 
+wfLoadExtension( 'PhpBBAuth'); 
 ```
 
 Run the extension with your forum's directory url (ex phpBB3) in ```LocalSettings.php```.
 
 ```php
-new phpBBAuth('./../phpBB3/');
+new PhpBBAuth('./../phpBB3/');
 ```
 
 That's it!

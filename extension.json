@@ -13,6 +13,6 @@
         }
     },
     "Hooks": {
-        "PersonalUrls": "phpBBAuth:onPersonalUrls"
+        "PersonalUrls": "PhpBBAuth:onPersonalUrls"
     }
 }
