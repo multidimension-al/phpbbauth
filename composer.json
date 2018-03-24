@@ -1,0 +1,12 @@
+{
+    "name": "multidimensional/phpbbauth",
+    "description": "A Mediawiki extension for phpBB authentication.",
+    "version": "0.0.1",
+    "homepage": "https://github.com/multidimension-al/cakephpify",
+    "license": "MIT",
+    "authors": [{
+        "name": "multidimension.al",
+        "homepage": "https://multidimension.al",
+        "role": "Developer"
+    }]
+}
