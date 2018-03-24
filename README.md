@@ -9,10 +9,14 @@ phpBB Auth Mediawiki Extension
 
 ## Installation
 
-Download the extension and add it to your extensions folder, or install it using Composer:
+Download the extension and add it to your extensions folder, or install it by adding it to your composer.local.json file:
 
 ```
-composer require --prefer-dist multidimensional/phpbbauth
+{
+    "require": {
+        "multidimensional/phpbbauth": "*"
+    }
+}
 ```
 
 Setup the prerequisites for Auth_remoteuser in ```LocalSettings.php```.
@@ -23,7 +27,7 @@ $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['autocreateaccount'] = true;
 ```
 
-Activate the extension in ```LocalSettings.php```, if not using Composer.
+Activate the extension in ```LocalSettings.php```.
 
 ```php
 wfLoadExtension( 'phpBBAuth'); 
