@@ -2,9 +2,9 @@
     "name": "phpBB Auth",
     "version": "0.0.1",
     "author": [
-        "multidimension.al"
+        "[http://multidimension.al/ multidimension.al]"
     ],
-    "url": "",
+    "url": "https://github.com/multidimension-al/phpbbauth",
     "descriptionmsg": "Automatically logs users in/out using their phpBB session. Requires the Auth_remoteuser extension version 2.0+.",
     "license-name": "MIT",
     "type": "mediawiki-extension",

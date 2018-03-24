@@ -16,14 +16,15 @@
 
 class PhpBBAuth
 {
-    public $forumURL;
-    protected $phpBBUser;
+    function __construct() {
 
-    function __construct($forumURL) {
+        global $wgPhpBBAuthForumDirectory;
 
-        $this->forumURL = $forumURL;
+        if ( !isset( $wgPhpBBAuthForumDirectory ) ) {
+            $wgPhpBBAuthForumDirectory = './../phpBB3/';
+        }
 
-        define('PHPBB_ROOT_PATH', $this->forumURL);
+        define('PHPBB_ROOT_PATH', $wgPhpBBAuthForumDirectory);
         define('IN_PHPBB', true);
 
         $phpbb_root_path = PHPBB_ROOT_PATH;
@@ -35,8 +36,6 @@ class PhpBBAuth
         $auth->acl($user->data);
         $user->setup();
         $request->enable_super_globals();
-
-        $this->phpBBUser = $user;
 
         if($user->data['user_id'] != ANONYMOUS){
 
@@ -53,7 +52,7 @@ class PhpBBAuth
             $wgHiddenPrefs[] = 'disablemail';
 
             $wgAuthRemoteuserUserUrls = array(
-                'logout' => $this->forumURL . 'ucp.php?mode=logout&sid=' . $user->session_id
+                'logout' => $wgPhpBBAuthForumDirectory . 'ucp.php?mode=logout&sid=' . $user->session_id
             );
 
         }
@@ -62,16 +61,14 @@ class PhpBBAuth
 
     public function onPersonalUrls(array &$personal_urls, Title $title, SkinTemplate $skin) {
 
+        global $wgPhpBBAuthForumDirectory;
+
         if (array_key_exists('login', $personal_urls)) {
-            $personal_urls['login']['href'] = $this->forumURL . 'ucp.php?mode=login';
+            $personal_urls['login']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
         }
 
         if (array_key_exists('anonlogin', $personal_urls)) {
-            $personal_urls['anonlogin']['href'] = $this->forumURL . 'ucp.php?mode=login';
-        }
-
-        if (array_key_exists('logout', $personal_urls)) {
-            $personal_urls['logout']['href'] = $this->forumURL . 'ucp.php?mode=logout&sid=' . $this->phpBBUser->session_id;
+            $personal_urls['anonlogin']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
         }
 
         return true;
