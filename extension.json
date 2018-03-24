@@ -6,6 +6,12 @@
     ],
     "url": "",
     "descriptionmsg": "Automatically logs users in/out using their phpBB session. Requires the Auth_remoteuser extension version 2.0+.",
+    "license-name": "MIT",
+    "type": "mediawiki-extension",
+    "config": {
+        "_prefix": "wgPhpBBAuth",
+        "ForumDirectory": "./../phpBB3/"
+    },
     "requires": {
         "MediaWiki": ">= 1.27.0",
         "extensions": {
