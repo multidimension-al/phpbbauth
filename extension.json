@@ -5,7 +5,7 @@
         "multidimension.al"
     ],
     "url": "",
-    "descriptionmsg": "Automatically logs users in/out using their phpBB session. Based on the Auth_remoteuser extension.",
+    "descriptionmsg": "Automatically logs users in/out using their phpBB session. Requires the Auth_remoteuser extension version 2.0+.",
     "requires": {
         "MediaWiki": ">= 1.27.0",
         "extensions": {

@@ -1,15 +1,47 @@
 phpBB Auth Mediawiki Extension
 =============
 
+## Requirements
 
+* Mediawiki 1.27+
+* phpBB 3.0+
+* Extension: Auth_remoteuser 2.0+
+
+## Installation
+
+Download the extension and add it to your extensions folder, or install it using Composer:
+
+```
+composer require --prefer-dist multidimensional/phpbbauth
+```
+
+Setup the prerequesits for Auth_remoteuser in ```LocalSettings.php```.
+
+```php
+wfLoadExtension( 'Auth_remoteuser' );
+$wgGroupPermissions['*']['createaccount'] = false;
+$wgGroupPermissions['*']['autocreateaccount'] = true;
+```
+
+Activate the extension in ```LocalSettings.php```.
+
+```php
+wfLoadExtension( 'phpBBAuth'); 
+```
+
+Run the extension with your forum's directory url (ex phpBB3).
+
+```php
+new phpBBAuth('./../phpBB3/');
+```
+
+That's it!
 
 ## License
 
     The MIT License (MIT)
 
-    Copyright (c) 2016 multidimension.al
-    Copyright (c) 2012 Collin McDonald 
-    Copyright (c) 2011 Sandeep Shetty
+    Copyright (c) 2018 multidimension.al
 	
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
