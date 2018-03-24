@@ -15,7 +15,7 @@ Download the extension and add it to your extensions folder, or install it using
 composer require --prefer-dist multidimensional/phpbbauth
 ```
 
-Setup the prerequesits for Auth_remoteuser in ```LocalSettings.php```.
+Setup the prerequisites for Auth_remoteuser in ```LocalSettings.php```.
 
 ```php
 wfLoadExtension( 'Auth_remoteuser' );
@@ -29,7 +29,7 @@ Activate the extension in ```LocalSettings.php```.
 wfLoadExtension( 'phpBBAuth'); 
 ```
 
-Run the extension with your forum's directory url (ex phpBB3).
+Run the extension with your forum's directory url (ex phpBB3) in ```LocalSettings.php```.
 
 ```php
 new phpBBAuth('./../phpBB3/');

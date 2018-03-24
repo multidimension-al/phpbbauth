@@ -8,5 +8,13 @@
         "name": "multidimension.al",
         "homepage": "https://multidimension.al",
         "role": "Developer"
-    }]
+    }],
+    "require": {
+        "mediawiki/auth-remoteuser": ">=2.0.0"
+    },
+    "autoload": {
+        "files": [
+            "phpBBAuth.php"
+        ]
+    }
 }
