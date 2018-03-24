@@ -23,7 +23,7 @@ $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['autocreateaccount'] = true;
 ```
 
-Activate the extension in ```LocalSettings.php```.
+Activate the extension in ```LocalSettings.php```, if not using Composer.
 
 ```php
 wfLoadExtension( 'phpBBAuth'); 
