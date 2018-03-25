@@ -2,7 +2,7 @@
     "name": "multidimensional/phpbbauth",
     "type": "mediawiki-extension",
     "description": "A Mediawiki extension for phpBB authentication using Auth_remoteuser.",
-    "version": "0.0.2",
+    "version": "0.0.3-dev",
     "homepage": "https://github.com/multidimension-al/cakephpify",
     "license": "MIT",
     "authors": [{
