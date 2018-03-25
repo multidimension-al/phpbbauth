@@ -14,39 +14,49 @@
  * @license    http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-if(!isset($wgPhpbbAuthForumDirectory)) {
-    $wgPhpbbAuthForumDirectory = './../phpBB3/';
-}
+class PhpbbAuth
+{
 
-define('PHPBB_ROOT_PATH', $wgPhpbbAuthForumDirectory);
-define('IN_PHPBB', true);
+    public function __construct(){
 
-$phpbb_root_path = PHPBB_ROOT_PATH;
-$phpEx = substr(strrchr(__FILE__, '.'), 1);
-require($phpbb_root_path . 'common.' . $phpEx);
+        if (!isset($wgPhpbbAuthForumDirectory))
+        {
+            $wgPhpbbAuthForumDirectory = './../phpBB3/';
+        }
 
-// Start session management
-$user->session_begin();
-$auth->acl($user->data);
-$user->setup();
-$request->enable_super_globals();
+        define('PHPBB_ROOT_PATH', $wgPhpbbAuthForumDirectory);
+        define('IN_PHPBB', true);
 
-if($user->data['user_id'] != ANONYMOUS) {
+        $phpbb_root_path = PHPBB_ROOT_PATH;
+        $phpEx = substr(strrchr(__FILE__, '.'), 1);
+        require($phpbb_root_path . 'common.' . $phpEx);
 
-    $wgAuthRemoteuserUserName = ucfirst(strtolower($user->data['username']));
-    $wgAuthRemoteuserUserPrefs = array(
-        'realname' => $user->data['username'],
-        'language' => 'en',
-        'disablemail' => 0
-    );
-    $wgAuthRemoteuserUserPrefsForced = array(
-        'email' => $user->data['user_email']
-    );
-    $wgDefaultUserOptions['disablemail'] = 0;
-    $wgHiddenPrefs[] = 'disablemail';
+        // Start session management
+        $user->session_begin();
+        $auth->acl($user->data);
+        $user->setup();
+        $request->enable_super_globals();
 
-    $wgAuthRemoteuserUserUrls = array(
-        'logout' => $wgPhpbbAuthForumDirectory . 'ucp.php?mode=logout&sid=' . $user->session_id
-    );
+        if ($user->data['user_id'] != ANONYMOUS) {
+
+            $wgAuthRemoteuserUserName = ucfirst(strtolower($user->data['username']));
+            $wgAuthRemoteuserUserPrefs = array(
+                'realname' => $user->data['username'],
+                'language' => 'en',
+                'disablemail' => 0
+            );
+            $wgAuthRemoteuserUserPrefsForced = array(
+                'email' => $user->data['user_email']
+            );
+            $wgDefaultUserOptions['disablemail'] = 0;
+            $wgHiddenPrefs[] = 'disablemail';
+
+            $wgAuthRemoteuserUserUrls = array(
+                'logout' => $wgPhpbbAuthForumDirectory . 'ucp.php?mode=logout&sid=' . $user->session_id
+            );
+
+        }
+
+    }
 
 }

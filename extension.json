@@ -19,6 +19,7 @@
         }
     },
     "AutoloadClasses": {
+        "PhpbbAuth": "PhpbbAuth_body.php",
         "PhpbbAuthHooks": "PhpbbAuthHooks.php"
     },
     "Hooks": {
