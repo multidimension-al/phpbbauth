@@ -15,7 +15,7 @@ A [MediaWiki](http://www.mediawiki.org/) Extension for phpBB Authentication usin
 
 ## Installation
 
-Download the extension and add it to your extensions folder, or install it by adding it to your composer.local.json file:
+Download the extension and add it to your extensions folder, or install it by adding it to your ```composer.local.json``` file:
 
 ```
 {
