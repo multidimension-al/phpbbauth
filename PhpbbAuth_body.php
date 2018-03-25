@@ -50,19 +50,3 @@ if($user->data['user_id'] != ANONYMOUS) {
     );
 
 }
-
-public function onPersonalUrls(array &$personal_urls, Title $title, SkinTemplate $skin) {
-
-    global $wgPhpBBAuthForumDirectory;
-
-    if (array_key_exists('login', $personal_urls)) {
-        $personal_urls['login']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
-    }
-
-    if (array_key_exists('anonlogin', $personal_urls)) {
-        $personal_urls['anonlogin']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
-    }
-
-    return true;
-
-}

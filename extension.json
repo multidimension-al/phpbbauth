@@ -18,8 +18,11 @@
             "Auth_remoteuser": ">= 2.0.0"
         }
     },
+    "AutoloadClasses": {
+        "PhpbbAuthHooks": "includes/PhpbbAuthHooks.php"
+    },
     "Hooks": {
-        "PersonalUrls": "onPersonalUrls"
+        "PersonalUrls": "PhpBBAuthHooks:onPersonalUrls"
     },
     "manifest_version": 1
 }
