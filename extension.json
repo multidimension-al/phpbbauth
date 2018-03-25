@@ -19,10 +19,10 @@
         }
     },
     "AutoloadClasses": {
-        "PhpbbAuthHooks": "includes/PhpbbAuthHooks.php"
+        "PhpbbAuthHooks": "PhpbbAuthHooks.php"
     },
     "Hooks": {
-        "PersonalUrls": "PhpBBAuthHooks::onPersonalUrls"
+        "PersonalUrls": "PhpbbAuthHooks::onPersonalUrls"
     },
     "manifest_version": 1
 }
