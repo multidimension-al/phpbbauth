@@ -1,5 +1,11 @@
-phpBB Auth Mediawiki Extension
-=============
+# phpBB Auth Mediawiki Extension
+
+[![Latest Stable Version](https://poser.pugx.org/multidimensional/phpbbauth/v/stable.svg)](https://packagist.org/packages/multidimensional/phpbbauth)
+[![Minimum PHP Version](http://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg)](https://php.net/)
+[![License](https://poser.pugx.org/multidimensional/phpbbauth/license.svg)](https://packagist.org/packages/multidimensional/phpbbauth)
+[![Total Downloads](https://poser.pugx.org/multidimensional/phpbbauth/d/total.svg)](https://packagist.org/packages/multidimensional/phpbbauth)
+
+A [MediaWiki](http://www.mediawiki.org/) Extension for phpBB Authentication using [Auth_remoteuser](https://www.mediawiki.org/wiki/Extension:Auth_remoteuser).
 
 ## Requirements
 
