@@ -19,9 +19,7 @@
         }
     },
     "Hooks": {
-        "PersonalUrls": "PhpBBAuth:onPersonalUrls"
+        "PersonalUrls": "onPersonalUrls"
     },
-    "AutoloadClasses": {
-        "PhpBBAuth": "PhpBBAuth.php"
-    }
+    "manifest_version": 1
 }

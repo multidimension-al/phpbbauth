@@ -33,10 +33,10 @@ Activate the extension in ```LocalSettings.php```.
 wfLoadExtension( 'Phpbbauth'); 
 ```
 
-Run the extension with your forum's directory url (ex phpBB3) in ```LocalSettings.php```.
+Configure your forum's directory url (ex phpBB3) in ```LocalSettings.php```.
 
 ```php
-new PhpBBAuth('./../phpBB3/');
+$wgPhpbbAuthForumDirectory = './../phpBB3/';
 ```
 
 That's it!
