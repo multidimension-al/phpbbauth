@@ -2,7 +2,7 @@
     "name": "phpBB Auth",
     "version": "0.0.1",
     "author": [
-        "[http://multidimension.al/ multidimension.al]"
+        "[https://multidimension.al/ multidimension.al]"
     ],
     "url": "https://github.com/multidimension-al/phpbbauth",
     "descriptionmsg": "Automatically logs users in/out using their phpBB session. Requires the Auth_remoteuser extension version 2.0+.",
@@ -22,7 +22,7 @@
         "PhpbbAuthHooks": "includes/PhpbbAuthHooks.php"
     },
     "Hooks": {
-        "PersonalUrls": "PhpBBAuthHooks:onPersonalUrls"
+        "PersonalUrls": "PhpBBAuthHooks::onPersonalUrls"
     },
     "manifest_version": 1
 }
