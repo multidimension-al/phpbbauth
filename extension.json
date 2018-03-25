@@ -1,11 +1,11 @@
 {
-    "name": "phpBB Auth",
+    "name": "phpBBAuth",
     "version": "0.0.2-dev",
     "author": [
         "[https://multidimension.al/ multidimension.al]"
     ],
     "url": "https://github.com/multidimension-al/phpbbauth",
-    "descriptionmsg": "Automatically logs users in/out using their phpBB session. Requires the Auth_remoteuser extension version 2.0+.",
+    "descriptionmsg": "phpbbauth-desc",
     "license-name": "MIT",
     "type": "mediawiki-extension",
     "config": {
@@ -23,6 +23,9 @@
     },
     "Hooks": {
         "PersonalUrls": "PhpbbAuthHooks::onPersonalUrls"
+    },
+    "MessagesDirs": {
+        "Phpbbauth": "i18n"
     },
     "manifest_version": 1
 }
