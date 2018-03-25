@@ -14,5 +14,14 @@
         "php": ">=5.4.0",
         "composer/installers": "~1.0.1",
         "mediawiki/auth-remoteuser": ">=2.0.0"
+    },
+    "require-dev": {
+        "mediawiki/mediawiki-codesniffer": "*"
+    },
+    "scripts": {
+        "test": [
+            "phpcs -p -s"
+        ],
+        "fix": "phpcbf"
     }
 }
