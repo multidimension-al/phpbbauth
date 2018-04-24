@@ -21,7 +21,7 @@
 
 class PhpbbAuthHooks {
 
-	public function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
+	public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
 		global $wgPhpBBAuthForumDirectory;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
