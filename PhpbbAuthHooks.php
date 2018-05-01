@@ -25,11 +25,11 @@ class PhpbbAuthHooks {
 		global $wgPhpBBAuthForumDirectory;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
-			$personal_urls['login']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
+			$personal_urls['login']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
 		}
 
 		if ( array_key_exists( 'anonlogin', $personal_urls ) ) {
-			$personal_urls['anonlogin']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login';
+			$personal_urls['anonlogin']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
 		}
 
 		return true;
