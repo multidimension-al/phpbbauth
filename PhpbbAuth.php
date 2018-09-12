@@ -36,7 +36,7 @@ $auth->acl( $user->data );
 $user->setup();
 $request->enable_super_globals();
 
-if ( $user->data['user_id'] != ANONYMOUS ) {
+if ( $user->data['user_id'] != ANONYMOUS && !$user->data['is_bot'] ) {
 
 	$wgAuthRemoteuserUserName = ucfirst( strtolower( $user->data['username'] ) );
 	$wgAuthRemoteuserUserPrefs = [
