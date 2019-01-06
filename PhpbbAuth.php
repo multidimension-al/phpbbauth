@@ -38,7 +38,11 @@ $request->enable_super_globals();
 
 if ( $user->data['user_id'] != ANONYMOUS && !$user->data['is_bot'] ) {
 
-	$wgAuthRemoteuserUserName = ucfirst( strtolower( $user->data['username'] ) );
+	if($wgPhpbbAuthNameFormat == 'phpbb'){
+		$wgAuthRemoteuserUserName = $user->data['username'];
+	}else{
+		$wgAuthRemoteuserUserName = ucfirst( strtolower( $user->data['username'] ) );
+	}
 	$wgAuthRemoteuserUserPrefs = [
 		'realname' => $user->data['username'],
 		'language' => 'en',
