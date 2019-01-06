@@ -43,6 +43,16 @@ require_once "$IP/extensions/Phpbbauth/PhpbbAuth.php";
 
 That's it!
 
+## Advanced Settings
+
+You can specify the formatting that Mediawiki will use for users that are logged into your wiki. By default, the login has uppercase first letters and the rest lowercase. You can set the following in ```LocalSettings.php```
+
+```php
+$wgPhpbbAuthNameFormat = 'phpBB';
+```
+
+This will set your Mediawiki username to be the same as phpBB.
+
 ## License
 
     The MIT License (MIT)
