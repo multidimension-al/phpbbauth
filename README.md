@@ -48,7 +48,7 @@ That's it!
 You can specify the formatting that Mediawiki will use for users that are logged into your wiki. By default, the login has uppercase first letters and the rest lowercase. You can set the following in ```LocalSettings.php```
 
 ```php
-$wgPhpbbAuthNameFormat = 'phpBB';
+$wgPhpbbAuthNameFormat = 'phpbb';
 ```
 
 This will set your Mediawiki username to be the same as phpBB.
