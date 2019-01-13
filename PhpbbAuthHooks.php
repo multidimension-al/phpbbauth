@@ -22,14 +22,14 @@
 class PhpbbAuthHooks {
 
 	public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
-		global $wgPhpBBAuthForumDirectory;
+		global $wgPhpbbAuthForumDirectory;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
-			$personal_urls['login']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
+			$personal_urls['login']['href'] = $wgPhpbbAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
 		}
 
 		if ( array_key_exists( 'anonlogin', $personal_urls ) ) {
-			$personal_urls['anonlogin']['href'] = $wgPhpBBAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
+			$personal_urls['anonlogin']['href'] = $wgPhpbbAuthForumDirectory . 'ucp.php?mode=login&redirect=' . $_SERVER[ 'REQUEST_URI' ];
 		}
 
 		return true;
