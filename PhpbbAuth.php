@@ -36,11 +36,11 @@ $auth->acl( $user->data );
 $user->setup();
 $request->enable_super_globals();
 
-if ( !$wgPhpbbAuthAbsolutePath ) {
-	if($user->data['force_server_vars']){
-		$wgPhpbbAuthAbsolutePath = ($user->data['server_protocol'] ? $user->data['server_protocol'] : '//') . $user->data['server_name'] . $user->data['script_path'] . '/';
+if ( !isset($wgPhpbbAuthAbsolutePath) ) {
+	if($config['force_server_vars']){
+		$wgPhpbbAuthAbsolutePath = ($config['server_protocol'] ? $config['server_protocol'] : '//') . $config['server_name'] . $config['script_path'] . '/';
 	} else {
-		$wgPhpbbAuthAbsolutePath = realpath($wgPhpbbAuthForumDirectory);	
+		$wgPhpbbAuthAbsolutePath = $wgPhpbbAuthForumDirectory;	
 	}
 }
 
