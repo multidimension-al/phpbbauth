@@ -38,6 +38,7 @@ Activate the extension in ```LocalSettings.php``` and set your phpBB directory l
 ```php
 wfLoadExtension( 'Phpbbauth' );
 $wgPhpbbAuthForumDirectory = './../phpBB3/';
+$wgPhpbbAuthAbsolutePath = '//www.domain.com/phpBB3/';
 require_once "$IP/extensions/Phpbbauth/PhpbbAuth.php";
 ```
 
