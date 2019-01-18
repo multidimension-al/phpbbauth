@@ -36,11 +36,19 @@ $auth->acl( $user->data );
 $user->setup();
 $request->enable_super_globals();
 
+if ( !$wgPhpbbAuthAbsolutePath ) {
+	if($user->data['force_server_vars']){
+		$wgPhpbbAuthAbsolutePath = ($user->data['server_protocol'] ? $user->data['server_protocol'] : '//') . $user->data['server_name'] . $user->data['script_path'] . '/';
+	} else {
+		$wgPhpbbAuthAbsolutePath = realpath($wgPhpbbAuthForumDirectory);	
+	}
+}
+
 if ( $user->data['user_id'] != ANONYMOUS && !$user->data['is_bot'] ) {
 
 	if($wgPhpbbAuthNameFormat == 'phpbb'){
 		$wgAuthRemoteuserUserName = $user->data['username'];
-	}else{
+	} else {
 		$wgAuthRemoteuserUserName = ucfirst( strtolower( $user->data['username'] ) );
 	}
 	$wgAuthRemoteuserUserPrefs = [
@@ -55,7 +63,7 @@ if ( $user->data['user_id'] != ANONYMOUS && !$user->data['is_bot'] ) {
 	$wgHiddenPrefs[] = 'disablemail';
 
 	$wgAuthRemoteuserUserUrls = [
-		'logout' => $wgPhpbbAuthForumDirectory . 'ucp.php?mode=logout&sid=' . $user->session_id
+		'logout' => $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=logout&sid=' . $user->session_id
 	];
 
 }
