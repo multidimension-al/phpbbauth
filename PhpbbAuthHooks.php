@@ -25,11 +25,11 @@ class PhpbbAuthHooks {
 		global $wgPhpbbAuthAbsolutePath, $wgServer;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
-			$personal_urls['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
+			$personal_urls['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgCanonicalServer . $_SERVER[ 'REQUEST_URI' ] );
 		}
 
 		if ( array_key_exists( 'anonlogin', $personal_urls ) ) {
-			$personal_urls['anonlogin']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
+			$personal_urls['anonlogin']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgCanonicalServer . $_SERVER[ 'REQUEST_URI' ] );
 		}
 
 		return true;
