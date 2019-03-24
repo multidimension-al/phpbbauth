@@ -22,7 +22,7 @@
 class PhpbbAuthHooks {
 
 	public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
-		global $wgPhpbbAuthAbsolutePath, $wgServer, $wgCanonicalServer;
+		global $wgPhpbbAuthAbsolutePath, $wgCanonicalServer;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
 			$personal_urls['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgCanonicalServer . $_SERVER[ 'REQUEST_URI' ] );
