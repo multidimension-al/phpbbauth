@@ -14,7 +14,7 @@
  * For full copyright and license information, please see the LICENSE file
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright  Copyright © 2018 Multidimension.al (http://multidimension.al)
+ * @copyright  Copyright © 2018-2019 Multidimension.al (http://multidimension.al)
  * @link       https://github.com/multidimension-al/phpbbauth phpBB Auth Github
  * @license    http://www.opensource.org/licenses/mit-license.php MIT License
  */
