@@ -14,22 +14,39 @@
  * For full copyright and license information, please see the LICENSE file
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright  Copyright © 2018-2019 Multidimension.al (http://multidimension.al)
+ * @copyright  Copyright © 2018 Multidimension.al (http://multidimension.al)
  * @link       https://github.com/multidimension-al/phpbbauth phpBB Auth Github
  * @license    http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 class PhpbbAuthHooks {
 
+	public static function onSkinTemplateNavigationUniversal($skinTemplate, &$links){
+		global $wgPhpbbAuthAbsolutePath, $wgServer;
+
+		if( array_key_exists( 'user-menu', $links ) ){
+
+			if ( array_key_exists( 'login', $links['user-menu'] ) ) {
+				$links['user-menu']['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
+			}
+
+			if ( array_key_exists( 'anonlogin', $links['user-menu'] ) ) {
+				$links['user-menu']['anonlogin']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
+			}
+
+            }
+
+	}
+
 	public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
-		global $wgPhpbbAuthAbsolutePath, $wgCanonicalServer;
+		global $wgPhpbbAuthAbsolutePath, $wgServer;
 
 		if ( array_key_exists( 'login', $personal_urls ) ) {
-			$personal_urls['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgCanonicalServer . $_SERVER[ 'REQUEST_URI' ] );
+			$personal_urls['login']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
 		}
 
 		if ( array_key_exists( 'anonlogin', $personal_urls ) ) {
-			$personal_urls['anonlogin']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgCanonicalServer . $_SERVER[ 'REQUEST_URI' ] );
+			$personal_urls['anonlogin']['href'] = $wgPhpbbAuthAbsolutePath . 'ucp.php?mode=login&redirect=' . urlencode( $wgServer . $_SERVER[ 'REQUEST_URI' ] );
 		}
 
 		return true;
