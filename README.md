@@ -9,7 +9,7 @@ A [MediaWiki](http://www.mediawiki.org/) Extension for phpBB Authentication usin
 
 ## Requirements
 
-* Mediawiki 1.27+
+* Mediawiki 1.36+ (Use V0.0.6 for older MediaWiki installs)
 * phpBB 3.0+
 * Extension: Auth_remoteuser 2.0+
 
