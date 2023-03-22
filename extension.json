@@ -1,6 +1,6 @@
 {
     "name": "phpBBAuth",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "author": [
         "[https://multidimension.al/ multidimension.al]"
     ],
@@ -13,7 +13,7 @@
         "ForumDirectory": "./../phpBB3/"
     },
     "requires": {
-        "MediaWiki": ">= 1.27.0",
+        "MediaWiki": ">= 1.36.0",
         "extensions": {
             "Auth_remoteuser": ">= 2.0.0"
         }
@@ -22,7 +22,7 @@
         "PhpbbAuthHooks": "PhpbbAuthHooks.php"
     },
     "Hooks": {
-        "PersonalUrls": "PhpbbAuthHooks::onPersonalUrls"
+        "SkinTemplateNavigation::Universal": "PhpbbAuthHooks::onSkinTemplateNavigationUniversal"
     },
     "MessagesDirs": {
         "Phpbbauth": "i18n"
